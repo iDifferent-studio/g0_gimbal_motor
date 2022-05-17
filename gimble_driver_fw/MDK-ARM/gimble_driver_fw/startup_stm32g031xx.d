@@ -1,0 +1,1 @@
+gimble_driver_fw\startup_stm32g031xx.o: startup_stm32g031xx.s
