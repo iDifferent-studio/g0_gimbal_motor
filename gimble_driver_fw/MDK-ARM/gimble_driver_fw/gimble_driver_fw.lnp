@@ -10,6 +10,7 @@
 "gimble_driver_fw\usart.o"
 "gimble_driver_fw\stm32g0xx_it.o"
 "gimble_driver_fw\stm32g0xx_hal_msp.o"
+"gimble_driver_fw\flash_wr.o"
 "gimble_driver_fw\stm32g0xx_ll_utils.o"
 "gimble_driver_fw\stm32g0xx_ll_exti.o"
 "gimble_driver_fw\stm32g0xx_hal_adc.o"

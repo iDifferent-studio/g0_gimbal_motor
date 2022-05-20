@@ -58,3 +58,4 @@ gimble_driver_fw\lowpass_filter.o: ..\SimpleFOC\pid.h
 gimble_driver_fw\lowpass_filter.o: ..\SimpleFOC\MagneticSensor.h
 gimble_driver_fw\lowpass_filter.o: ..\SimpleFOC\LowsideCurrentSense.h
 gimble_driver_fw\lowpass_filter.o: ..\SimpleFOC\CurrentSense.h
+gimble_driver_fw\lowpass_filter.o: ../Core/Inc/flash_WR.h

@@ -58,4 +58,5 @@ gimble_driver_fw\magneticsensor.o: ..\SimpleFOC\pid.h
 gimble_driver_fw\magneticsensor.o: ..\SimpleFOC\MagneticSensor.h
 gimble_driver_fw\magneticsensor.o: ..\SimpleFOC\LowsideCurrentSense.h
 gimble_driver_fw\magneticsensor.o: ..\SimpleFOC\CurrentSense.h
+gimble_driver_fw\magneticsensor.o: ../Core/Inc/flash_WR.h
 gimble_driver_fw\magneticsensor.o: ../Core/Inc/spi.h

@@ -1,7 +1,7 @@
 Dependencies for Project 'gimble_driver_fw', Target 'gimble_driver_fw': (DO NOT MODIFY !)
 F (startup_stm32g031xx.s)(0x627BC777)(--cpu Cortex-M0+ -g --apcs=interwork -I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "STM32G031xx SETA 1"--list startup_stm32g031xx.lst --xref -o gimble_driver_fw\startup_stm32g031xx.o --depend gimble_driver_fw\startup_stm32g031xx.d)
-F (../Core/Src/main.c)(0x6281FE58)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\main.o --omf_browse gimble_driver_fw\main.crf --depend gimble_driver_fw\main.d)
-I (../Core/Inc/main.h)(0x628278F0)
+F (../Core/Src/main.c)(0x628782EC)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\main.o --omf_browse gimble_driver_fw\main.crf --depend gimble_driver_fw\main.d)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -59,6 +59,7 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 I (../Core/Inc/adc.h)(0x627BC76E)
 I (../Core/Inc/dma.h)(0x627BC76F)
 I (../Core/Inc/i2c.h)(0x627BC76F)
@@ -68,7 +69,7 @@ I (../Core/Inc/usart.h)(0x627BC770)
 I (../Core/Inc/gpio.h)(0x627BC76D)
 F (../Core/Src/gpio.c)(0x627BC76D)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\gpio.o --omf_browse gimble_driver_fw\gpio.crf --depend gimble_driver_fw\gpio.d)
 I (../Core/Inc/gpio.h)(0x627BC76D)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -126,9 +127,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/adc.c)(0x627BC76E)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\adc.o --omf_browse gimble_driver_fw\adc.crf --depend gimble_driver_fw\adc.d)
 I (../Core/Inc/adc.h)(0x627BC76E)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -186,9 +188,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/dma.c)(0x627BC76F)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\dma.o --omf_browse gimble_driver_fw\dma.crf --depend gimble_driver_fw\dma.d)
 I (../Core/Inc/dma.h)(0x627BC76F)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -246,9 +249,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/i2c.c)(0x627E1DF3)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\i2c.o --omf_browse gimble_driver_fw\i2c.crf --depend gimble_driver_fw\i2c.d)
 I (../Core/Inc/i2c.h)(0x627BC76F)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -306,9 +310,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/spi.c)(0x627BC76F)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\spi.o --omf_browse gimble_driver_fw\spi.crf --depend gimble_driver_fw\spi.d)
 I (../Core/Inc/spi.h)(0x627BC76F)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -366,9 +371,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/tim.c)(0x627BC770)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\tim.o --omf_browse gimble_driver_fw\tim.crf --depend gimble_driver_fw\tim.d)
 I (../Core/Inc/tim.h)(0x627BC770)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -426,9 +432,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/usart.c)(0x627BC770)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\usart.o --omf_browse gimble_driver_fw\usart.crf --depend gimble_driver_fw\usart.d)
 I (../Core/Inc/usart.h)(0x627BC770)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -486,8 +493,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (../Core/Src/stm32g0xx_it.c)(0x627BC770)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\stm32g0xx_it.o --omf_browse gimble_driver_fw\stm32g0xx_it.crf --depend gimble_driver_fw\stm32g0xx_it.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -545,9 +553,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 I (../Core/Inc/stm32g0xx_it.h)(0x627BC771)
 F (../Core/Src/stm32g0xx_hal_msp.c)(0x627BC771)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\stm32g0xx_hal_msp.o --omf_browse gimble_driver_fw\stm32g0xx_hal_msp.crf --depend gimble_driver_fw\stm32g0xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -605,6 +614,49 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
+F (..\Core\Src\flash_WR.c)(0x6283E217)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\flash_wr.o --omf_browse gimble_driver_fw\flash_wr.crf --depend gimble_driver_fw\flash_wr.d)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
+I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_def.h)(0x6273D717)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h)(0x6273D717)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g031xx.h)(0x6273D717)
+I (../Drivers/CMSIS/Include/core_cm0plus.h)(0x6273D6FE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6273D6FE)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6273D6FE)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6273D6FE)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x6273D6FE)
+I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/system_stm32g0xx.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6273D717)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_rcc.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_gpio_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dma.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_dmamux.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_dma_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_cortex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_adc.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_adc_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_exti.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_flash_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_i2c.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_i2c_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_pwr_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_spi.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_spi_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x6273D717)
+I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x6273D717)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_utils.c)(0x6273D717)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\stm32g0xx_ll_utils.o --omf_browse gimble_driver_fw\stm32g0xx_ll_utils.crf --depend gimble_driver_fw\stm32g0xx_ll_utils.d)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_ll_utils.h)(0x6273D717)
 I (../Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h)(0x6273D717)
@@ -1803,7 +1855,7 @@ I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h)(0x6273D717)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h)(0x6273D717)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h)(0x6273D717)
 F (..\SimpleFOC\foc_utils.c)(0x6274EED8)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\foc_utils.o --omf_browse gimble_driver_fw\foc_utils.crf --depend gimble_driver_fw\foc_utils.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -1861,8 +1913,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (..\SimpleFOC\FOCMotor.c)(0x627FBED6)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\focmotor.o --omf_browse gimble_driver_fw\focmotor.crf --depend gimble_driver_fw\focmotor.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -1920,8 +1973,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
-F (..\SimpleFOC\BLDCMotor.c)(0x627FBED6)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\bldcmotor.o --omf_browse gimble_driver_fw\bldcmotor.crf --depend gimble_driver_fw\bldcmotor.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
+F (..\SimpleFOC\BLDCMotor.c)(0x6286444A)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\bldcmotor.o --omf_browse gimble_driver_fw\bldcmotor.crf --depend gimble_driver_fw\bldcmotor.d)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -1979,9 +2033,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 I (../Core/Inc/tim.h)(0x627BC770)
-F (..\SimpleFOC\pid.c)(0x628252CD)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\pid.o --omf_browse gimble_driver_fw\pid.crf --depend gimble_driver_fw\pid.d)
-I (../Core/Inc/main.h)(0x628278F0)
+F (..\SimpleFOC\pid.c)(0x628526B6)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\pid.o --omf_browse gimble_driver_fw\pid.crf --depend gimble_driver_fw\pid.d)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -2039,8 +2094,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (..\SimpleFOC\MagneticSensor.c)(0x627A42B0)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\magneticsensor.o --omf_browse gimble_driver_fw\magneticsensor.crf --depend gimble_driver_fw\magneticsensor.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -2098,9 +2154,10 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 I (../Core/Inc/spi.h)(0x627BC76F)
 F (..\SimpleFOC\lowpass_filter.c)(0x628251F2)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\lowpass_filter.o --omf_browse gimble_driver_fw\lowpass_filter.crf --depend gimble_driver_fw\lowpass_filter.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -2158,8 +2215,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (..\SimpleFOC\CurrentSense.c)(0x62823104)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\currentsense.o --omf_browse gimble_driver_fw\currentsense.crf --depend gimble_driver_fw\currentsense.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -2217,8 +2275,9 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 F (..\SimpleFOC\LowsideCurrentSense.c)(0x62822426)(--c99 -c --cpu Cortex-M0+ -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ..\SimpleFOC-I.\RTE\_gimble_driver_fw-IC:\Users\01\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\01\AppData\Local\Arm\Packs\Keil\STM32G0xx_DFP\1.4.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32G031xx -DUSE_HAL_DRIVER -DSTM32G031xx -DUSE_FULL_LL_DRIVER-o gimble_driver_fw\lowsidecurrentsense.o --omf_browse gimble_driver_fw\lowsidecurrentsense.crf --depend gimble_driver_fw\lowsidecurrentsense.d)
-I (../Core/Inc/main.h)(0x628278F0)
+I (../Core/Inc/main.h)(0x62878714)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h)(0x6273D717)
 I (../Core/Inc/stm32g0xx_hal_conf.h)(0x627BC771)
 I (../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_rcc.h)(0x6273D717)
@@ -2276,5 +2335,6 @@ I (..\SimpleFOC\pid.h)(0x6278EBDA)
 I (..\SimpleFOC\MagneticSensor.h)(0x627A4591)
 I (..\SimpleFOC\LowsideCurrentSense.h)(0x6277C717)
 I (..\SimpleFOC\CurrentSense.h)(0x612B9221)
+I (../Core/Inc/flash_WR.h)(0x6283D8F5)
 I (../Core/Inc/adc.h)(0x627BC76E)
 I (../Core/Inc/MP6540A_ASS.h)(0x62821DDE)

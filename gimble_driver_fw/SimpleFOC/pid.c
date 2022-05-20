@@ -26,8 +26,8 @@ void PID_init(void)
 	PID_angle.integral_prev=0;
 	PID_angle.timestamp_prev=SysTick->VAL;
 	
-	PID_current_q.P=0.5;  //航模电机，速度闭环，不能大于1，否则容易失控
-	PID_current_q.I=0.1;    //电流环I参数不太好调试，只用P参数也可以
+	PID_current_q.P=1.0;  //航模电机，速度闭环，不能大于1，否则容易失控
+	PID_current_q.I=0.0;    //电流环I参数不太好调试，只用P参数也可以
 	PID_current_q.D=0;
 	PID_current_q.output_ramp=0;
 	//PID_current_q.limit=0;

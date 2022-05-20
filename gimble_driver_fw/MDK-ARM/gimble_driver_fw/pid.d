@@ -58,3 +58,4 @@ gimble_driver_fw\pid.o: ..\SimpleFOC\pid.h
 gimble_driver_fw\pid.o: ..\SimpleFOC\MagneticSensor.h
 gimble_driver_fw\pid.o: ..\SimpleFOC\LowsideCurrentSense.h
 gimble_driver_fw\pid.o: ..\SimpleFOC\CurrentSense.h
+gimble_driver_fw\pid.o: ../Core/Inc/flash_WR.h

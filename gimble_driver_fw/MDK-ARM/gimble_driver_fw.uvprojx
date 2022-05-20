@@ -493,6 +493,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32g0xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_WR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\flash_WR.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

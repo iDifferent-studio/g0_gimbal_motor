@@ -53,6 +53,8 @@ extern "C" {
 #include "MagneticSensor.h" 
 #include "LowsideCurrentSense.h"
 #include "CurrentSense.h"
+
+#include "flash_WR.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -62,7 +64,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+extern uint8_t running_state, error_code;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

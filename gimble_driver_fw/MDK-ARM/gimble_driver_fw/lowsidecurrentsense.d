@@ -58,5 +58,6 @@ gimble_driver_fw\lowsidecurrentsense.o: ..\SimpleFOC\pid.h
 gimble_driver_fw\lowsidecurrentsense.o: ..\SimpleFOC\MagneticSensor.h
 gimble_driver_fw\lowsidecurrentsense.o: ..\SimpleFOC\LowsideCurrentSense.h
 gimble_driver_fw\lowsidecurrentsense.o: ..\SimpleFOC\CurrentSense.h
+gimble_driver_fw\lowsidecurrentsense.o: ../Core/Inc/flash_WR.h
 gimble_driver_fw\lowsidecurrentsense.o: ../Core/Inc/adc.h
 gimble_driver_fw\lowsidecurrentsense.o: ../Core/Inc/MP6540A_ASS.h

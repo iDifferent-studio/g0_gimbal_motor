@@ -53,6 +53,20 @@ float target;
 uint8_t controller_state, controller_error, motor_en;
 uint8_t i2c_rx_buf[10];
 uint8_t flag_500ms=0;
+uint8_t running_state=0, error_code=0;
+
+union flash_save
+{
+	struct
+	{
+		float val_f[10];
+		uint8_t val_u8[8];
+		float zero_electric_angle;
+		int16_t sensor_direction;
+		int16_t pole_pairs;
+	}data;
+	uint64_t buf[7];
+}flash_save;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -129,9 +143,49 @@ int main(void)
 	motion_controller=Type_angle; 
 	target=0;
 	
-	Motor_init();
-	Motor_initFOC(0,UNKNOWN);
+	STMFLASH_Read(FLASH_SECTOR31_START, flash_save.buf, 6);
+	if(flash_save.data.val_u8[7]!=0xAA)
+	{
+		flash_save.data.val_f[0]=voltage_limit;
+		flash_save.data.val_f[1]=velocity_limit;
+		flash_save.data.val_f[2]=current_limit;
+		flash_save.data.val_f[3]=voltage_sensor_align;
+		flash_save.data.val_f[4]=PID_angle.P;
+		flash_save.data.val_f[5]=PID_velocity.P;
+		flash_save.data.val_f[6]=PID_velocity.I;
+		flash_save.data.val_f[7]=PID_velocity.D;
+		flash_save.data.val_f[8]=PID_current_q.P;
+		flash_save.data.val_u8[0]=(uint8_t)torque_controller;
+		flash_save.data.val_u8[1]=(uint8_t)motion_controller;
+		flash_save.data.val_u8[7]=0xAA;
+		STMFLASH_Write(FLASH_SECTOR31_START, flash_save.buf, 6);
+	}	
+	else
+	{
+		voltage_limit       =flash_save.data.val_f[0];
+		velocity_limit      =flash_save.data.val_f[1];
+		current_limit       =flash_save.data.val_f[2];
+		voltage_sensor_align=flash_save.data.val_f[3];
+		PID_angle.P         =flash_save.data.val_f[4];
+		PID_velocity.P      =flash_save.data.val_f[5];
+		PID_velocity.I      =flash_save.data.val_f[6];
+		PID_velocity.D      =flash_save.data.val_f[7];
+		PID_current_q.P     =flash_save.data.val_f[8];
+		torque_controller=(TorqueControlType)flash_save.data.val_u8[0];
+		motion_controller=(MotionControlType)flash_save.data.val_u8[1];
+	}
 	
+	Motor_init();
+	STMFLASH_Read(FLASH_SECTOR30_START, &flash_save.buf[6], 1);
+	if(flash_save.buf[6]==0xFFFFFFFFFFFFFFFF)
+		Motor_initFOC(0,UNKNOWN);
+	else
+	{
+		pole_pairs=(int)flash_save.data.pole_pairs;
+		Motor_initFOC(flash_save.data.zero_electric_angle,(Direction)flash_save.data.sensor_direction);
+	}
+	
+	running_state=1;
 	motor_en=1;
   /* USER CODE END 2 */
 
@@ -286,7 +340,8 @@ void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, ui
 			break;
 			
 			case 0x06:
-				
+				tx_data.buf[0]=running_state;
+				tx_data.buf[1]=error_code;
 			break;
 			
 			case 0x07:
@@ -295,35 +350,43 @@ void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, ui
 			break;
 			
 			case 0x08:
-				tx_data.val_f=voltage_limit;
+				tx_data.val_f=voltage_power_supply;
 			break;
 			
 			case 0x09:
-				tx_data.val_f=velocity_limit;
+				tx_data.val_f=voltage_limit;
 			break;
 			
 			case 0x10:
-				tx_data.val_f=current_limit;
+				tx_data.val_f=velocity_limit;
 			break;
 			
 			case 0x11:
-				tx_data.val_f=voltage_sensor_align;
+				tx_data.val_f=current_limit;
 			break;
 			
 			case 0x12:
-				tx_data.val_f=PID_angle.P;
+				tx_data.val_f=voltage_sensor_align;
 			break;
 			
 			case 0x13:
-				tx_data.val_f=PID_velocity.P;
+				tx_data.val_f=PID_angle.P;
 			break;
 			
 			case 0x14:
-				tx_data.val_f=PID_velocity.I;
+				tx_data.val_f=PID_velocity.P;
 			break;
 			
 			case 0x15:
+				tx_data.val_f=PID_velocity.I;
+			break;
+			
+			case 0x16:
 				tx_data.val_f=PID_velocity.D;
+			break;
+			
+			case 0x17:
+				tx_data.val_f=PID_current_q.P;
 			break;
 			
 			default:
@@ -355,37 +418,50 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c)
 			case 0x07:
 				torque_controller=(TorqueControlType)rx_data.buf[0];
 				motion_controller=(MotionControlType)rx_data.buf[1];
+				
+				if(torque_controller == Type_voltage)
+					PID_velocity.limit = voltage_limit;  //速度模式的电流限制
+				else  
+					PID_velocity.limit = current_limit;
 			break;
 			
 			case 0x08:
-				voltage_limit=rx_data.val_f;
+				voltage_power_supply=tx_data.val_f;
 			break;
 			
 			case 0x09:
-				velocity_limit=rx_data.val_f;
+				voltage_limit=rx_data.val_f;
 			break;
 			
 			case 0x10:
-				current_limit=rx_data.val_f;
+				velocity_limit=rx_data.val_f;
 			break;
 			
 			case 0x11:
-				voltage_sensor_align=rx_data.val_f;
+				current_limit=rx_data.val_f;
 			break;
 			
 			case 0x12:
-				PID_angle.P=rx_data.val_f;
+				voltage_sensor_align=rx_data.val_f;
 			break;
 			
 			case 0x13:
-				PID_velocity.P=rx_data.val_f;
+				PID_angle.P=rx_data.val_f;
 			break;
 			
 			case 0x14:
-				PID_velocity.I=rx_data.val_f;
+				PID_velocity.P=rx_data.val_f;
 			break;
 			
 			case 0x15:
+				PID_velocity.I=rx_data.val_f;
+			break;
+			
+			case 0x16:
+				PID_velocity.D=rx_data.val_f;
+			break;
+			
+			case 0x17:
 				PID_velocity.D=rx_data.val_f;
 			break;
 			
@@ -401,15 +477,50 @@ void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *hi2c)
 			case 0x81:
 				if(motor_en)
 				{
+					running_state=2;
 					motor_en=0;
 					M1_Disable;
 				}
 				else
 				{
+					running_state=1;
 					motor_en=1;
 					M1_Enable;
 					target=shaft_angle;
 				}
+			break;
+				
+			case 0x82:
+				flash_save.data.val_f[0]=voltage_limit;
+				flash_save.data.val_f[1]=velocity_limit;
+				flash_save.data.val_f[2]=current_limit;
+				flash_save.data.val_f[3]=voltage_sensor_align;
+				flash_save.data.val_f[4]=PID_angle.P;
+				flash_save.data.val_f[5]=PID_velocity.P;
+				flash_save.data.val_f[6]=PID_velocity.I;
+				flash_save.data.val_f[7]=PID_velocity.D;
+				flash_save.data.val_f[8]=PID_current_q.P;
+				flash_save.data.val_u8[0]=(uint8_t)torque_controller;
+				flash_save.data.val_u8[1]=(uint8_t)motion_controller;
+				flash_save.data.val_u8[7]=0xAA;
+				STMFLASH_Write(FLASH_SECTOR31_START, flash_save.buf, 6);
+			break;
+			
+			case 0x83:
+				flash_save.data.val_u8[7]=0xFF;
+				STMFLASH_Write(FLASH_SECTOR31_START, flash_save.buf, 6);
+			break;
+			
+			case 0x84:			
+				flash_save.data.sensor_direction=(int16_t)sensor_direction;
+				flash_save.data.zero_electric_angle=zero_electric_angle;
+				flash_save.data.pole_pairs=(int16_t)pole_pairs;
+				STMFLASH_Write(FLASH_SECTOR30_START, &flash_save.buf[6], 1);
+			break;
+			
+			case 0x85:			
+				flash_save.buf[6]=0xFFFFFFFFFFFFFFFF;
+				STMFLASH_Write(FLASH_SECTOR30_START, &flash_save.buf[6], 1);
 			break;
 			
 			default:

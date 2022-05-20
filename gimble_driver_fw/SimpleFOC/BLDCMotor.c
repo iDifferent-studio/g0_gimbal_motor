@@ -37,7 +37,6 @@ void Motor_init(void)
 		PID_velocity.limit = current_limit;
 	PID_angle.limit = velocity_limit;      //角度模式的速度限制
 	
-//	pole_pairs=7;
 	sensor_direction=UNKNOWN;
 	
 	M1_Enable;
@@ -108,6 +107,8 @@ int alignSensor(void)
 		if((mid_angle == end_angle)||(moved < 0.02))  //相等或者几乎没有动
 		{
 	//		printf("MOT: Failed to notice movement loop222.\r\n");
+			error_code=1;
+			running_state=2;
 			M1_Disable;    //电机检测不正常，关闭驱动
 			return 0;
 		}
@@ -183,6 +184,7 @@ void loopFOC(void)
 		break;
 		
 		default:
+			error_code=2;
 //			printf("MOT: no torque control selected!");
 		break;
 	}

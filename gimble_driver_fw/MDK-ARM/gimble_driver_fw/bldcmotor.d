@@ -58,4 +58,5 @@ gimble_driver_fw\bldcmotor.o: ..\SimpleFOC\pid.h
 gimble_driver_fw\bldcmotor.o: ..\SimpleFOC\MagneticSensor.h
 gimble_driver_fw\bldcmotor.o: ..\SimpleFOC\LowsideCurrentSense.h
 gimble_driver_fw\bldcmotor.o: ..\SimpleFOC\CurrentSense.h
+gimble_driver_fw\bldcmotor.o: ../Core/Inc/flash_WR.h
 gimble_driver_fw\bldcmotor.o: ../Core/Inc/tim.h
